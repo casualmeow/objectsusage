@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript RPG Game</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="game">
+        <h1>JavaScript RPG Game</h1>
+        <div id="statusBar">
+            <h2>Status Bar</h2>
+            <p id="playerStatsDisplay">Health: 100, Attack: 10, Armor: 0, Buffs: None</p>
+        </div>
+        <div id="monsterArea">
+            <h2>Choose a Monster to Fight</h2>
+            <select id="monsterSelect"></select>
+            <button onclick="fightMonster()">Fight</button>
+            <button onclick="toggleHelp()">Help</button>
+        <div id="help" style="display:none;">
+            <h3>How to Play</h3>
+            <p>Select items from the list to buy. Fight monsters by selecting them from the dropdown. Use potions to heal or enhance your abilities.</p>
+            <h3>Monsters</h3>
+            <ul>
+                <li>Goblin - Health: 50, Damage: 5, Reward: 10</li>
+                <li>Orc - Health: 100, Damage: 10, Reward: 20</li>
+                <li>Dragon - Health: 200, Damage: 20, Reward: 50</li>
+                <li>Skeleton - Health: 40, Damage: 7, Reward: 30</li>
+            </ul>
+            <h3>Weapons and Armor</h3>
+            <ul>
+                <li>Sword - Price: 100, Damage: 15</li>
+                <li>Axe - Price: 150, Damage: 20</li>
+                <li>Dagger - Price: 80, Damage: 10</li>
+                <li>Shield - Price: 120, Armor: 10</li>
+                <li>Helmet - Price: 80, Armor: 5</li>
+                <li>Body Armor - Price: 200, Armor: 20</li>
+            </ul>
+            <h3>Potions and Buffs</h3>
+            <ul>
+                <li>Healing Potion - Price: 30, Heals: 25 HP</li>
+                <li>Strength Potion - Price: 50, Attack Boost: +5 for 5 mins</li>
+                <li>Speed Potion - Price: 50, Evasion +25 for 5 mins</li>
+            </ul>
+        </div>
+        </div>
+        
+        <div id="fightLog"></div>
+        <div id="inventoryArea">
+            <h2>Your Inventory</h2>
+            <div id="inventoryList"></div>
+        </div>
+        <div id="shopArea">
+            <h2>Shop</h2>
+            <input type="text" id="itemName" placeholder="Enter item name">
+            <select id="itemCategory">
+                <option value="Weapon">Weapon</option>
+                <option value="Armor">Armor</option>
+                <option value="Potion">Potion</option>
+            </select>
+            <input type="number" id="itemQuantity" placeholder="Enter quantity" min="1">
+            <button onclick="buyItem()">Buy Item</button>
+            <p id="errorDisplay"></p>
+        </div>
+        <div id="currencyDisplay">Currency: 100</div>
+        <button onclick="resetGameData()">Reset Game</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
